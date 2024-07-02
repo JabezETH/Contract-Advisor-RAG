@@ -1,0 +1,11 @@
+python3
+python-docx
+langchain_community
+langchain_chroma
+langchain_openai
+langchainhub
+bs4
+flask
+flask_cors
+docx2txt
+
