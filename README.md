@@ -19,6 +19,7 @@ There are two basic variables that affect the performance of the RAG pipeline. T
 -	User query
 -	Retrieved data (Context)
 -	LLM 
+
 Therefore, by modifying these variables I can improve the RAG performance.
 RAGAS evaluation metrics
 Faithfulness: This measures the factual consistency of the generated answer against the given context. It is calculated from answer and retrieved context. The answer is scaled to (0,1) range. Higher the better.
