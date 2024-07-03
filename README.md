@@ -8,7 +8,7 @@ The first step in our journey is a powerful contract assistant, with the ultimat
 
 Our task is to build, evaluate, and improve a Retrieval-Augmented Generation (RAG) system for Contract Q&A (chatting with a contract and asking questions about the contract).
 
-![Workflow](Workflow.png){:width="50%"}
+![Workflow](Workflow.png){:width="20%"}
 
 ### Goal
 To create the best possible RAG system with the most effective strategies to provide users with the most relevant information about contracts.
