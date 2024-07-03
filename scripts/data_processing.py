@@ -1,5 +1,6 @@
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
+from langchain_experimental.text_splitter import SemanticChunker
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import Docx2txtLoader
 from dotenv import load_dotenv
