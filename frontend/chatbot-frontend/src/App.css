@@ -1,5 +1,10 @@
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Inter', sans-serif;
+  /* Apply the font globally */
 }
 
 .App-logo {
@@ -14,14 +19,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #c7d8eb;
+  background-image: url('/home/jabez/week_11/Contract-Advisor-RAG/photo_2024-07-06_02-18-49.jpg');
+  /* Add this line to set the background image */
+  background-size: cover;
+  /* Adjusts the background image size to cover the entire element */
+  background-position: center;
+  /* Centers the background image */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  /* Apply the font to .App-header */
 }
 
 .App-link {
@@ -32,6 +45,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

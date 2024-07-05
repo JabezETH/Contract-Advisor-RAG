@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Lizzy AI</h1>
-        <h4> Chat with the contract </h4>
+        <h2> Legal Contract Assistant </h2>
         <Chat />
       </header>
     </div>
