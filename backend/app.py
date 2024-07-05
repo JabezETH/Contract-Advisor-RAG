@@ -4,9 +4,11 @@ import logging
 import os
 from flask_cors import CORS
 
-sys.path.insert(1, '/home/jabez/week_11/Contract-Advisor-RAG/scripts')
-import data_processing
-import pipeline
+
+sys.path.insert(1, '/home/jabez/Documents/week_11/Contract-Advisor-RAG/scripts')
+# import data_processing
+# import pipeline
+import autogen_agent
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
@@ -20,29 +22,31 @@ logging.getLogger('watchdog').setLevel(logging.WARNING)
 @app.route('/chat', methods=['POST'])
 def execute():
     try:
-        data = request.json
+        data = request.form
         logging.debug(f"Request received: {data}")
-        
+
         if not data or 'message' not in data:
             raise ValueError("Invalid input data")
-        
+
         user_input = data.get('message')
         logging.debug(f"User input: {user_input}")
-        
-        file_path = os.getenv('FILE_PATH', '/home/jabez/week_11/Contract-Advisor-RAG/data/Raptor Contract.docx')
-        logging.debug(f"File path: {file_path}")
-        
-        # Load and process the document
-        doc = data_processing.doc_loader(file_path)
-        logging.debug("Document loaded successfully")
-        
-        vector = data_processing.text_splitter(doc)
-        logging.debug("Document processed into vectors")
-        
-        # Generate the chatbot response
-        result = pipeline.chatbot(vector, user_input)
+
+        file = request.files.get('file')
+        if file:
+            file_path = os.path.join('/home/jabez/Documents/week_11/Contract-Advisor-RAG/uploaded', file.filename)
+            file.save(file_path)
+            logging.debug(f"File uploaded to: {file_path}")
+        else:
+            file_path = os.getenv('FILE_PATH', '/home/jabez/Documents/week_11/Contract-Advisor-RAG/data/document.md')
+            logging.debug(f"Default file path: {file_path}")
+
+        # Assuming autogen_bot returns a dictionary with 'content' and 'role'
+        result = autogen_agent.autogen_bot(file_path, user_input)
         logging.debug(f"Chatbot response: {result}")
-        
+
+        if not isinstance(result, dict) or 'content' not in result or 'role' not in result:
+            raise ValueError("Invalid response format from autogen_bot")
+
         return jsonify({'response': result})
     except ValueError as ve:
         logging.error(f"ValueError: {ve}", exc_info=True)
