@@ -75,7 +75,7 @@ pip install -r requirements.txt
 # Install frontend dependencies
 pip install -r frontend_requirements.txt
 ```
-
+---
 ### Usage 
 Run the backend:
 ```sh
