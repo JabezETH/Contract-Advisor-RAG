@@ -74,3 +74,18 @@ pip install -r requirements.txt
 
 # Install frontend dependencies
 pip install -r frontend_requirements.txt
+```
+
+### Usage 
+Run the backend:
+```sh
+cd Contract-Advisor-RAG
+cd backend
+python3 app.py
+```
+Run the frontend:
+```sh
+cd Contract-Advisor-RAG
+cd frontend
+npm start
+```
