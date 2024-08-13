@@ -1,9 +1,7 @@
-python3
 python-docx
 langchain_community
 langchain_chroma
 langchain_openai
-langchain_experiment
 langchainhub
 bs4
 flask
