@@ -63,29 +63,16 @@ Based on the metrics we have evaluated, we can determine which strategies to mod
 # Create a virtual environment
 python -m venv env
 
-# Activate the virtual environment
-# For Windows
-env\Scripts\activate
-# For MacOS/Linux
-source env/bin/activate
-
-# Install backend dependencies
-pip install -r requirements.txt
-
-# Install frontend dependencies
-pip install -r frontend_requirements.txt
+# Install
+docker-compose up --build
 ```
 ---
 ### Usage 
-Run the backend:
+View the backend:
 ```sh
-cd Contract-Advisor-RAG
-cd backend
-python3 app.py
+Backend: http://localhost:5000
 ```
-Run the frontend:
+View the frontend:
 ```sh
-cd Contract-Advisor-RAG
-cd frontend
-npm start
+Frontend: http://localhost:3000
 ```

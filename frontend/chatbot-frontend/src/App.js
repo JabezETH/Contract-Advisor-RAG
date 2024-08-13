@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Chat from '/home/jabez/week_11/Contract-Advisor-RAG/frontend/chatbot-frontend/src/components/chatbot.js';
+import Chat from '/home/jabez/dockerized_projects/Contract-Advisor-RAG/frontend/chatbot-frontend/src/chatbot.js';
 
 function App() {
   return (
