@@ -60,9 +60,6 @@ Based on the metrics we have evaluated, we can determine which strategies to mod
 
 ### Installation
 ```sh
-# Create a virtual environment
-python -m venv env
-
 # Install
 docker-compose up --build
 ```
